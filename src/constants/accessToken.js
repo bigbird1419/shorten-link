@@ -1,0 +1,1 @@
+export const accessToken = 'f236eb7fac7b2c1c07c8b59222167d6757436e29'

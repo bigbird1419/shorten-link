@@ -1,19 +1,19 @@
 import classNames from 'classnames/bind'
+import { useContext } from 'react'
 
 import styles from './DefaultLayout.module.css'
 import Header from '../components/Header'
-import { useCallback, useState } from 'react'
+import { DarkModeContext } from '../../common/DarkModeContext'
 
 const cx = classNames.bind(styles)
 
 export default function DefaultLayout({ children }) {
-    const [isDarkMode, setIsDarkMode] = useState(false)
-    const handleToggleDarkMode = useCallback(() => {
-        setIsDarkMode(val => !val)
-    }, [])
+    const { isDarkMode, handleToggleDarkMode } = useContext(DarkModeContext)
 
     return (
-        <div className={cx('wrapper', isDarkMode ? 'bg-colorDark' : 'bg-colorLight')}>
+        <div
+            className={cx('wrapper', 'h-screen', isDarkMode ? 'bg-colorDark' : 'bg-colorLight')}
+        >
             <div className={cx('container')}>
                 <div className='row'>
                     <div className='col-12'>
