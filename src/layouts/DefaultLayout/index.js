@@ -12,7 +12,7 @@ export default function DefaultLayout({ children }) {
 
     return (
         <div
-            className={cx('wrapper', 'h-screen', isDarkMode ? 'bg-colorDark' : 'bg-colorLight')}
+            className={cx('wrapper', 'h-screen overflow-y-hidden', isDarkMode ? 'bg-colorDark' : 'bg-colorLight')}
         >
             <div className={cx('container')}>
                 <div className='row'>

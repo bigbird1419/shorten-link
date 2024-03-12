@@ -15,10 +15,10 @@ export default function Home() {
                     <div className='col-lg-6 col-xl-6 col-md-6 col-sm-12'>
                         <Application />
                     </div>
-                    <div className='col-lg-6 col-xl-6 col-md-6 col-sm-12'>
-                        <div className='w-100 h-100 relative'>
-                            <img src={bgImg} alt='' className='absolute top-0 right-0' />
-                            <img src={teamImg} alt='' className='absolute w-3/4 top-0 right-0 mt-1/4 mr-1/4' />
+                    <div className='col-lg-6 col-xl-6 col-md-6 col-sm-12 hidden sm:block'>
+                        <div className='w-100 h-100 relative flex justify-center items-center'>
+                            <img src={bgImg} alt='' className='w-100' />
+                            <img src={teamImg} alt='' className='absolute w-3/4 top-0 right-0'/>
                         </div>
                     </div>
                 </div>

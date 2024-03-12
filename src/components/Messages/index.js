@@ -31,7 +31,7 @@ export default function Messages({
             toastClass = 'bg-white';
     }
 
-    const classes = cx('fixed top-20 right-20 z-50 shadow-md px-6 py-2 rounded-full cursor-pointer', `${toastClass}`, {
+    const classes = cx('fixed top-10 right-10 z-50 shadow-md px-6 py-2 rounded-full cursor-pointer', `${toastClass}`, {
         className
     })
 
