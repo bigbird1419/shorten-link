@@ -1,4 +1,15 @@
-.input-shorten:focus{
+.input-shorten:focus {
     border-color: #4e6bff;
     outline-color: #4e6bff;
+}
+
+.qr-box:hover .qr-text {
+    display: block;
+    top: 100%;
+}
+
+.qr-text {
+    display: none;
+    top: 150%;
+    transition: all 0.5s ease-in-out;
 }

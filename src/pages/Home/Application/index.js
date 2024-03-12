@@ -82,6 +82,12 @@ export default function Application() {
     const handleHiddenMessage = () => {
         setIsShowMessage(false)
     }
+    const hanldeClickQR = e => {
+        const link = document.createElement('a');
+        link.href = e.target.toDataURL();
+        link.download = 'qrcode.png';
+        link.click();
+    }
 
     useEffect(() => {
         if (isShowMessage) {
@@ -116,7 +122,7 @@ export default function Application() {
                                 onChange={e => handleSetLongLink(e)} value={longLink}
                             />
                             {isShowErrorLink &&
-                                <span className="absolute top-100 left-0 text-colorSecondary text-sm">URL không đúng định dạng, vui lòng nhập lại.</span>
+                                <span className="absolute top-100 left-0 text-colorSecondary text-sm mt-2">URL không đúng định dạng, vui lòng nhập lại.</span>
                             }
                             {/* top-100 right-0 translate-y-[-2/4] */}
                             <Button
@@ -132,27 +138,28 @@ export default function Application() {
                     </form>
                     {isShowCopy &&
                         <div className="mt-4 flex items-center">
-                            <div className="mr-4">
-                                <QRCode value={longLink} />
+                            <div className={cx('mr-4 relative flex flex-col items-center', 'qr-box')}>
+                                <QRCode value={longLink} onClick={e => hanldeClickQR(e)} className="cursor-pointer"/>
+                                <p className={cx('qr-text', 'absolute text-sm')}>Bấm để tải xuống</p>
                             </div>
                             <div>
                                 <div className="mb-3 flex">
                                     <Button
-                                        href={'https://www.facebook.com/sharer/sharer.php?u=https://hitly.vn'}
-                                        className={cx('', 'px-4 py-2 mr-2 text-sm flex justify-center items-center text-colorLight bg-colorPrimary rounded-full shadow-md')}
+                                        href={'https://www.facebook.com/sharer/sharer.php?u=https://shly.netlify.app'}
+                                        className={cx('', 'px-4 py-2 mr-2 text-sm flex justify-center items-center text-colorLight bg-colorPrimary rounded-full shadow-md hover:opacity-80')}
                                     >
                                         Facebook
                                     </Button>
                                     <Button
-                                        href={'https://www.facebook.com/sharer/sharer.php?u=https://hitly.vn'}
-                                        className={cx('', 'px-4 py-2 text-sm flex justify-center items-center text-colorLight bg-colorPrimary rounded-full shadow-md')}
+                                        href={'https://www.facebook.com/sharer/sharer.php?u=https://shly.netlify.app'}
+                                        className={cx('', 'px-4 py-2 text-sm flex justify-center items-center text-colorLight bg-colorPrimary rounded-full shadow-md hover:opacity-80')}
                                     >
                                         Twitter
                                     </Button>
                                 </div>
                                 <Button
                                     onClick={handleResetLongLink}
-                                    className={cx('', 'px-4 py-2 flex justify-center items-center text-colorLight bg-colorPrimary rounded-full shadow-md')}
+                                    className={cx('', 'px-4 py-2 flex justify-center items-center text-colorLight bg-colorPrimary rounded-full shadow-md hover:bg-colorSecondary transition-300 transition-all')}
                                 >
                                     Đặt lại
                                     <i className="fa-regular fa-circle-xmark ml-2"></i>
