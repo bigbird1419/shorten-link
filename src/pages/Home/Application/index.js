@@ -92,7 +92,6 @@ export default function Application() {
             return () => clearTimeout(idTimeOut)
         }
     }, [isShowMessage])
-    console.log(longLink)
 
     return (
         <div className={cx('wrapper')}>
@@ -156,7 +155,7 @@ export default function Application() {
                                     className={cx('', 'px-4 py-2 flex justify-center items-center text-colorLight bg-colorPrimary rounded-full shadow-md')}
                                 >
                                     Đặt lại
-                                    <i class="fa-regular fa-circle-xmark ml-2"></i>
+                                    <i className="fa-regular fa-circle-xmark ml-2"></i>
                                 </Button>
                             </div>
                         </div>

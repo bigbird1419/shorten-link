@@ -8,6 +8,7 @@ import teamImg from '../../assets/team.png'
 const cx = classNames.bind(styles)
 
 export default function Home() {
+
     return (
         <div className={cx('wrapper')}>
             <div className={cx('container')}>
@@ -18,7 +19,7 @@ export default function Home() {
                     <div className='col-lg-6 col-xl-6 col-md-6 col-sm-12 hidden sm:block'>
                         <div className='w-100 h-100 relative flex justify-center items-center'>
                             <img src={bgImg} alt='' className='w-100' />
-                            <img src={teamImg} alt='' className='absolute w-3/4 top-0 right-0'/>
+                            <img src={teamImg} alt='' className='absolute w-3/4 top-0 right-0' />
                         </div>
                     </div>
                 </div>
